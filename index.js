@@ -1,3 +1,2 @@
-const dotEnv = require('dotenv');
-dotEnv.config();
+require('dotenv').config()
 module.exports = require('./src/main.js');
