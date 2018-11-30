@@ -1,6 +1,6 @@
 {
   "name": "tempeh",
-  "version": "1.0.0",
+  "version": "1.0.1-UnofficialBuild",
   "description": "An OpenSource BOT",
   "main": "index.js",
   "scripts": {
