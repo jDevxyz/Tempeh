@@ -1,4 +1,4 @@
-module.exports = Util;const request = require('superagent');
+const request = require('superagent');
 const nodeVersion = parseInt(process.versions.node.split('.'), 10);
 
 class Util {
