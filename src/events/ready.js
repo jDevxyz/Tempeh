@@ -1,4 +1,7 @@
 module.exports = client => {
+  if (client.config.database == 'nodb') {
+    console.log(`[WARN] WARNING! You're using ${client.user.username} without a proper database. Consider set up database to store data properly.`)
+  }
   console.log(`${client.user.username} Ready to playing with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
   function randStatus() {
     let status = [`with ${client.users.size} users`, `on Saucecade`];

@@ -1,8 +1,7 @@
-const PREFIX = require('../config.json').bot_prefix;
-
 module.exports = async (client, message) => {
     if (message.author.bot || !message.guild) return;
 
+    let PREFIX = client.config.bot_prefix;
     let prefix = PREFIX.toLowerCase();
     let msg = message.content.toLowerCase();
     
@@ -10,7 +9,12 @@ module.exports = async (client, message) => {
         try {
         require('../handler/command')(client, message);
         } catch(e) {
-            console.error(e);
+            if (client.config.error_logging == 'console') {
+                return console.error(e)
+            } else if (client.config.error_logging == 'markdown') {
+                console.error(e)
+                return message.channel.send(`an error occured \`\`\`${e.stack}\`\`\``);
+            }
         }
     } 
     if (msg == `<@${client.user.id}>` || msg == `<@!${client.user.id}>`) {

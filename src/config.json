@@ -2,6 +2,9 @@
   "bot_prefix": "t;",
   "embed_color": "RANDOM",
   "owners_id": [
-    "290159952784392202"
-  ]
+    "290159952784392202",
+    "337028800929857536"
+  ],
+  "database": "nodb",
+  "error_logging": "console"
 }

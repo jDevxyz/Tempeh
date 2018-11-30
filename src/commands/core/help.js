@@ -1,8 +1,9 @@
 const { RichEmbed } = require('discord.js');
-const { owners_id, bot_prefix } = require('../../config.json')
+// const { owners_id, bot_prefix } = require('../../config.json')
 
 exports.run = async (client, message, args, color) => {
-  let prefix = bot_prefix;
+  let prefix = client.config.bot_prefix;
+  let owners_id = client.config.owners_id;
   if (!args[0]) {
     let module = client.helps.array();
     if(!owners_id.includes(message.author.id)) module = client.helps.array().filter(x => !x.hide);

@@ -1,10 +1,11 @@
-const { bot_prefix, embed_color } = require('../config.json');
+// const { bot_prefix, embed_color } = require('../config.json');
+// Deprecated, use client.config instead
 const { Collection } = require('discord.js');
 const cooldowns = new Collection();
 
 module.exports = async (client, message) => {
-    let prefix = bot_prefix;
-    let color = embed_color;
+    let prefix = client.config.bot_prefix;
+    let color = client.config.embed_color;
     let args = message.content.slice(prefix.length).trim().split(/ +/g);
     let cmd = args.shift().toLowerCase();
 
