@@ -8,7 +8,7 @@ module.exports = async (client, message) => {
     
     if (msg.startsWith(prefix)) {
         try {
-        require('../handle/command')(client, message);
+        require('../handle/commands')(client, message);
         } catch(e) {
             console.error(e);
         }
